@@ -41,22 +41,29 @@ bottoneGenera.addEventListener('click', function() {
    var scontoMinorenni = prezzo - venti;
    var scontoOver65 = prezzo - quaranta;
 
+   var costo = 0;
    if (età == "minorenne") {
+     costo === scontoMinorenni;
      console.log(scontoMinorenni);
-   } else if (età == "over65") {
+   } else if (età === "over65") {
+     costo === scontoOver65;
      console.log(scontoOver65);
    } else {
+     costo === prezzo;
      console.log(prezzo);
    }
 
    //Compilazione BIGLIETTO
+   var biglietto = document.getElementById('biglietto');
+   biglietto.className = "visible";
+
    document.getElementById('nome-passeggero').innerHTML = " " + nome;
 
-   // var carrozza = Math.floor(Math.random() * 10) + 1;
-   var codiceCp = Math.floor(Math.random() * (100000 - 90000) + 90000;
+   var carrozza = Math.floor(Math.random() * 10) + 1;
+   var codiceCp = Math.floor(Math.random() * 100000 - 90000) + 90000;
 
    document.getElementById('offerta-applicata').innerHTML = " " + età;
    document.getElementById('carrozza').innerHTML = " " + carrozza;
    document.getElementById('codice-cp').innerHTML = " " + codiceCp;
-   document.getElementById('costo').innerHTML = " " + prezzo;
+   document.getElementById('costo').innerHTML = " " + costo;
 })
