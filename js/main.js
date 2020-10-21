@@ -5,21 +5,17 @@ var biglietto = document.getElementById('biglietto');
 var bottoneGenera = document.getElementById('bottoneGenera');
 var bottoneAnnulla = document.getElementById('bottoneAnnulla');
 
-var nome = document.getElementById('nome').value;
-var km = document.getElementById('km').value;
-var età = document.getElementById('fascia-età').value;
-
 // EVENTI
 //Calcolo e generazione biglietto
 bottoneGenera.addEventListener('click', function() {
 
    //Dati utente
    var nome = document.getElementById('nome').value;
-   console.log(nome);
+   console.log("Nome passeggero: " + nome);
    var km = document.getElementById('km').value;
-   console.log(km);
+   console.log("Destinazione a: " + km);
    var età = document.getElementById('fascia-età').value;
-   console.log(età);
+   console.log("Fascia di età: " + età);
 
    //Calcolo
    //Prezzo biglietto in base ai km (0.21€ al km)
@@ -36,13 +32,13 @@ bottoneGenera.addEventListener('click', function() {
    // Prezzo calcolato
    var costo = 0;
    if (età == "minorenne") {
-     costo = scontoMinorenni;
-     console.log(scontoMinorenni);
+     costo = scontoMinorenni.toFixed(2);
+     console.log("Prezzo scontato: " + scontoMinorenni + "€");
    } else if (età === "over65") {
-     costo = scontoOver65;
-     console.log(scontoOver65);
+     costo = scontoOver65.toFixed(2);
+     console.log("Prezzo scontato: " + scontoOver65 + "€");
    } else {
-     costo = prezzo;
+     costo = prezzo.toFixed(2);
      console.log(prezzo);
    }
 
@@ -50,7 +46,7 @@ bottoneGenera.addEventListener('click', function() {
    var biglietto = document.getElementById('biglietto');
    biglietto.className = "visible";
 
-   //  Nome passeggero
+   // Nome passeggero
    document.getElementById('nome-passeggero').innerHTML = " " + nome;
    // Numero carrozza
    var carrozza = Math.floor(Math.random() * 10) + 1;
@@ -61,5 +57,15 @@ bottoneGenera.addEventListener('click', function() {
    // Fascia eta selezionata dall'utente
    document.getElementById('offerta-applicata').innerHTML = " " + età;
    // Prezzo finale
-   document.getElementById('costo').innerHTML = " " + costo;
+   document.getElementById('costo').innerHTML = " " + costo + "€";
+ })
+
+ //Annula prenotazione
+ bottoneAnnulla.addEventListener('click', function() {
+
+   biglietto.className = "hidden";
+
+   document.getElementById('nome').value = "";
+   document.getElementById('km').value = "";
+   document.getElementById('fascia-età').value = "";
  })

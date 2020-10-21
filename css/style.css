@@ -1,7 +1,100 @@
 /* GENERAL STYLE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: grey;
+  background: #D5E5E7;
+}
 /* Utilities */
+.m30 {
+  margin: 30px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Typhography */
+h1, h2 {
+  text-align: center;
+  color: #010D2E;
+}
 
 /* Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  border-radius: 20px;
+  margin: 13px auto;
+  padding: 40px;
+  background: #fff;
+}
+
+section {
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: grey;
+}
+
+input {
+  font-size: 18px;
+  font-weight: 700;
+  width: 100%;
+  line-height: 50px;
+  border-style: none;
+  border-bottom: 1px solid grey;
+}
+
+select {
+  font-size: 18px;
+  font-weight: 700;
+  width: 100%;
+  line-height: 50px;
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+  box-shadow: none;
+  border-style: none;
+  border-bottom: 1px solid grey;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+button {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 50px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  background: #010D2E;
+  transition: 1.5s;
+}
+
+button:hover {
+  font-size: 13px;
+  background: #FF1907;
+}
 
 /* BIGLIETTO GENERATO */
 .hidden {
@@ -10,4 +103,17 @@
 
 .visible {
   visibility: visible;
+  color: #010D2E;
+}
+
+.offerta {
+  text-align: center;
+}
+
+.offerta table {
+  margin: auto;
+}
+
+.offerta table tbody tr th {
+  padding: 8px 30px;
 }
