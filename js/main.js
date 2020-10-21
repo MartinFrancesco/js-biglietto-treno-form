@@ -1,10 +1,3 @@
-//  Nome passeggero
-// Fascia eta selezionata dall'utente
-// Codice treno CP (numero casuale tra 90000 e 100000 escluso)
-// Numero carrozza
-// Prezzo calcolato
-
-
 /* VENDITA BIGLIETTI TRENO */
 
 // REFERENZA ELEMENTI
@@ -19,13 +12,12 @@ var età = document.getElementById('fascia-età').value;
 // EVENTI
 //Calcolo e generazione biglietto
 bottoneGenera.addEventListener('click', function() {
+
    //Dati utente
    var nome = document.getElementById('nome').value;
    console.log(nome);
-
    var km = document.getElementById('km').value;
    console.log(km);
-
    var età = document.getElementById('fascia-età').value;
    console.log(età);
 
@@ -41,15 +33,16 @@ bottoneGenera.addEventListener('click', function() {
    var scontoMinorenni = prezzo - venti;
    var scontoOver65 = prezzo - quaranta;
 
+   // Prezzo calcolato
    var costo = 0;
    if (età == "minorenne") {
-     costo === scontoMinorenni;
+     costo = scontoMinorenni;
      console.log(scontoMinorenni);
    } else if (età === "over65") {
-     costo === scontoOver65;
+     costo = scontoOver65;
      console.log(scontoOver65);
    } else {
-     costo === prezzo;
+     costo = prezzo;
      console.log(prezzo);
    }
 
@@ -57,13 +50,16 @@ bottoneGenera.addEventListener('click', function() {
    var biglietto = document.getElementById('biglietto');
    biglietto.className = "visible";
 
+   //  Nome passeggero
    document.getElementById('nome-passeggero').innerHTML = " " + nome;
-
+   // Numero carrozza
    var carrozza = Math.floor(Math.random() * 10) + 1;
-   var codiceCp = Math.floor(Math.random() * 100000 - 90000) + 90000;
-
-   document.getElementById('offerta-applicata').innerHTML = " " + età;
    document.getElementById('carrozza').innerHTML = " " + carrozza;
+   // Codice treno CP (numero casuale tra 90000 e 100000 escluso)
+   var codiceCp = Math.floor(Math.random() * 100000 - 90000) + 90000;
    document.getElementById('codice-cp').innerHTML = " " + codiceCp;
+   // Fascia eta selezionata dall'utente
+   document.getElementById('offerta-applicata').innerHTML = " " + età;
+   // Prezzo finale
    document.getElementById('costo').innerHTML = " " + costo;
-})
+ })
