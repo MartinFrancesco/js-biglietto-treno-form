@@ -10,6 +10,11 @@ body {
   color: grey;
   background: #D5E5E7;
 }
+
+* :focus{
+  outline: none;
+}
+
 /* Utilities */
 .m30 {
   margin: 30px;
@@ -36,13 +41,14 @@ h1, h2 {
   align-items: center;
   width: 600px;
   border-radius: 20px;
-  margin: 13px auto;
+  margin: 30px auto;
   padding: 40px;
   background: #fff;
 }
 
 section {
   width: 100%;
+  padding-top: 20px;
 }
 
 label {
@@ -60,11 +66,16 @@ input {
   border-bottom: 1px solid grey;
 }
 
+input:focus {
+  border-bottom: 3px solid #010D2E;
+}
+
 select {
   font-size: 18px;
   font-weight: 700;
   width: 100%;
   line-height: 50px;
+  margin-bottom: 20px;
   padding: 0;
   cursor: pointer;
   appearance: none;
@@ -82,7 +93,7 @@ select {
 button {
   font-size: 14px;
   font-weight: 700;
-  line-height: 50px;
+  line-height: 55px;
   margin: 10px 0;
   border: none;
   border-radius: 20px;
@@ -93,6 +104,7 @@ button {
 
 button:hover {
   font-size: 13px;
+  letter-spacing: 5px;
   background: #FF1907;
 }
 
